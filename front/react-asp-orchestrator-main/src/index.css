@@ -1,0 +1,141 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 211 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 121 40% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 33 100% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 211 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 211 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 121 40% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 33 100% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 211 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cc-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .container-cc {
+    @apply container mx-auto px-4;
+  }
+
+  .cc-card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-cc-border transition-all hover:shadow-lg;
+  }
+
+  .cc-input {
+    @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cc-primary transition duration-200;
+  }
+
+  .cc-btn-primary {
+    @apply bg-cc-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-200;
+  }
+
+  .cc-btn-secondary {
+    @apply bg-cc-secondary hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md transition duration-200;
+  }
+
+  .cc-btn-accent {
+    @apply bg-cc-accent hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-md transition duration-200;
+  }
+
+  .cc-tab {
+    @apply px-4 py-2 font-medium text-sm rounded-t-lg transition-colors;
+  }
+
+  .cc-tab-active {
+    @apply bg-white border-b-2 border-cc-primary text-cc-primary;
+  }
+
+  .cc-tab-inactive {
+    @apply bg-gray-50 text-gray-600 hover:bg-gray-100;
+  }
+
+  .animate-enter {
+    @apply animate-fade-in;
+  }
+}
